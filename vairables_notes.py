@@ -4,6 +4,6 @@ name = input("tell me your name: ")
 
 print("csp is the worst class!")
 print("it is tought by a teacher")
-print("hello", Name, "welcome to class!")
+print("hello", name, "welcome to class!")
       
 
