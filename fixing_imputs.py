@@ -8,4 +8,4 @@ while True:
     elif " " in name:
         print("are you sure your not stupid, i asked for a word not a number try again")
     else:
-        print(f"I like your name but it took way to long to get it right {name}")
+        print(f"I like your name {name}")
