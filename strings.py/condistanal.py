@@ -28,3 +28,4 @@ if time > 900 and time < 1600:
             print("good morning!")
 else:
     print(" you are not requiared to be at school")
+    break
