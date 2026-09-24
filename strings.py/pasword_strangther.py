@@ -1,12 +1,69 @@
 # MW pasword strangthener
-pawsword = input("please create a pasword: ").strip()
+password = input("Enter a password: ")
 
-length = len(pasword) 
+length = False
+uppercase = False
+lowercase = False
+number = False
+symbol = False
 
-has_upper = any(char.isupper() for char in password)
+if len(password) >= 8:
+    length = True
 
-has_lower = any(char.islower() for char in password)
+if any(letter.isupper() for letter in password):
+    uppercase = True
 
-has_number = any(char.isnumeric() for char in pasword)
+if any(letter.islower() for letter in password):
+    lowercase = True
 
-has_symbal = any(char.)
+if any(letter.isdigit() for letter in password):
+    number = True
+
+if any(letter in "!@#$%^&*" for letter in password):
+    symbol = True
+
+score = 0
+
+if length:
+    score += 1
+if uppercase:
+    score += 1
+if lowercase:
+    score += 1
+if number:
+    score += 1
+if symbol:
+    score += 1
+
+if score == 5:
+    strength = "Strong"
+elif score >= 3:
+    strength = "Medium"
+else:
+    strength = "Weak"
+
+print("\nPassword:", password)
+print("Length:", length)
+print("Uppercase:", uppercase)
+print("Lowercase:", lowercase)
+print("Number:", number)
+print("Symbol:", symbol)
+print("Strength:", strength)
+
+if strength != "Strong":
+    print("\nYou are missing:")
+
+    if length == False:
+        print("- At least 8 characters")
+
+    if uppercase == False:
+        print("- An uppercase letter")
+
+    if lowercase == False:
+        print("- A lowercase letter")
+
+    if number == False:
+        print("- A number")
+
+    if symbol == False:
+        print("- A symbol")
