@@ -42,7 +42,7 @@ elif score >= 3:
 else:
     strength = "Weak"
 
-print("\nPassword:", password)
+print("\nPassword:", password) 
 print("Length:", length)
 print("Uppercase:", uppercase)
 print("Lowercase:", lowercase)
