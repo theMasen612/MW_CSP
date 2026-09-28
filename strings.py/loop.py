@@ -20,3 +20,7 @@ print("GOOSE!!!!!!!!!!")
 
 
 sibling + ["izzy", "lili", "gabe", "joesph", "samantha", "jenessa", "angel",]
+
+print(sibling[2])
+print(siblings)
+siblings.append("jsyshere")
