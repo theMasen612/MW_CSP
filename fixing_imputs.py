@@ -9,3 +9,4 @@ while True:
         print("are you sure your not stupid, i asked for a word not a number try again")
     else:
         print(f"I like your name {name}")
+        break
