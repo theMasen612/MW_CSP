@@ -7,14 +7,11 @@ lowercase = False
 number = False
 symbol = False
 
-if len(password) >= 8:
-    length = True
-
 if any(letter.isupper() for letter in password):
     uppercase = True
 
-if any(letter.islower() for letter in password):
-    lowercase = True
+if len(password) >= 8:
+    length = True
 
 if any(letter.isdigit() for letter in password):
     number = True
@@ -22,17 +19,20 @@ if any(letter.isdigit() for letter in password):
 if any(letter in "!@#$%^&*" for letter in password):
     symbol = True
 
+if any(letter.islower() for letter in password):
+    lowercase = True
+
 score = 0
 
-if length:
-    score += 1
 if uppercase:
     score += 1
-if lowercase:
+if length:
+    score += 1
+if symbol:
     score += 1
 if number:
     score += 1
-if symbol:
+if lowercase:
     score += 1
 
 if score == 5:
@@ -42,28 +42,28 @@ elif score >= 3:
 else:
     strength = "Weak"
 
-print("\nPassword:", password) 
-print("Length:", length)
+print("\nPassword:", password)
 print("Uppercase:", uppercase)
-print("Lowercase:", lowercase)
+print("Length:", length)
 print("Number:", number)
 print("Symbol:", symbol)
+print("Lowercase:", lowercase)
 print("Strength:", strength)
 
 if strength != "Strong":
     print("\nYou are missing:")
 
-    if length == False:
-        print("- At least 8 characters")
-
     if uppercase == False:
         print("- An uppercase letter")
 
-    if lowercase == False:
-        print("- A lowercase letter")
+    if length == False:
+        print("- At least 8 characters")
+
+    if symbol == False:
+        print("- A symbol")
 
     if number == False:
         print("- A number")
 
-    if symbol == False:
-        print("- A symbol")
+    if lowercase == False:
+        print("- A lowercase letter")
